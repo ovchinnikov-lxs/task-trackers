@@ -1,0 +1,10 @@
+# Misc
+.DS_Store
+.fleet
+.idea
+ecosystem.config.js
+.eslintcache
+
+# Local env files
+.env
+.env.*
