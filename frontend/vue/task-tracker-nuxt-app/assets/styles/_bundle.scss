@@ -1,0 +1,9 @@
+@import "normalize";
+@import "variables";
+@import "transition";
+
+body {
+    font-family: Inter, sans-serif;
+    font-size: var(--ui-base-size);
+    color: var(--ui-colors-gray-900);
+}

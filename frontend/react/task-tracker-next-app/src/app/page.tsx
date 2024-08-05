@@ -3,8 +3,8 @@ import styles from "./page.module.scss";
 
 export default function Home() {
     return (
-       <main>
-           main
-       </main>
+        <main>
+            main
+        </main>
     );
 }

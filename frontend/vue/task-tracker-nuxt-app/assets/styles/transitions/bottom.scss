@@ -1,0 +1,12 @@
+.bottom-enter-from,
+.bottom-leave-to {
+    opacity: 0;
+    transform: translate3d(0, var(--ui-unit), 0);
+}
+
+.bottom-enter-active,
+.bottom-leave-active {
+    transition:
+        opacity var(--ui-transition-duration) var(--ui-transition-timing-function),
+        transform var(--ui-transition-duration) var(--ui-transition-timing-function);
+}

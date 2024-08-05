@@ -1,3 +1,3 @@
-export function Layout({ children }: { children: React.ReactNode }) {
+export function Layout({children}: { children: React.ReactNode }) {
 
 }

@@ -1,0 +1,170 @@
+:root {
+
+    /*
+        COLORS
+     */
+
+
+    --ui-colors-base-black: #000000;
+    --ui-colors-base-neutral: #f4f6f8;
+    --ui-colors-base-white: #ffffff;
+    --ui-colors-bluegreen-50: #eef9fa;
+    --ui-colors-bluegreen-100: #ccecee;
+    --ui-colors-bluegreen-200: #b3e3e6;
+    --ui-colors-bluegreen-300: #90d7da;
+    --ui-colors-bluegreen-400: #7acfd3;
+    --ui-colors-bluegreen-500: #59c3c8;
+    --ui-colors-bluegreen-600: #51b1b6;
+    --ui-colors-bluegreen-700: #3f8a8e;
+    --ui-colors-bluegreen-800: #316b6e;
+    --ui-colors-bluegreen-900: #255254;
+    --ui-colors-brown-50: #f0ede7;
+    --ui-colors-brown-100: #d1c6b4;
+    --ui-colors-brown-200: #baaa8f;
+    --ui-colors-brown-300: #9b845c;
+    --ui-colors-brown-400: #886c3d;
+    --ui-colors-brown-500: #6a470c;
+    --ui-colors-brown-600: #60410b;
+    --ui-colors-brown-700: #4b3209;
+    --ui-colors-brown-800: #3a2707;
+    --ui-colors-brown-900: #2d1e05;
+    --ui-colors-danger-50: #fdecec;
+    --ui-colors-danger-100: #fac5c5;
+    --ui-colors-danger-200: #f8a9a9;
+    --ui-colors-danger-300: #f48282;
+    --ui-colors-danger-400: #f26969;
+    --ui-colors-danger-500: #ef4444;
+    --ui-colors-danger-600: #d93e3e;
+    --ui-colors-danger-700: #aa3030;
+    --ui-colors-danger-800: #832525;
+    --ui-colors-danger-900: #641d1d;
+    --ui-colors-gray-50: #f0f1f2;
+    --ui-colors-gray-100: #d1d3d8;
+    --ui-colors-gray-200: #bbbec5;
+    --ui-colors-gray-300: #9ca1aa;
+    --ui-colors-gray-400: #898e99;
+    --ui-colors-gray-500: #6b7280;
+    --ui-colors-gray-600: #616874;
+    --ui-colors-gray-700: #4c515b;
+    --ui-colors-gray-800: #3b3f46;
+    --ui-colors-gray-900: #2d3036;
+    --ui-colors-orange-50: #fef4e8;
+    --ui-colors-orange-100: #fbdcb8;
+    --ui-colors-orange-200: #f9cb95;
+    --ui-colors-orange-300: #f6b365;
+    --ui-colors-orange-400: #f4a547;
+    --ui-colors-orange-500: #f18e19;
+    --ui-colors-orange-600: #db8117;
+    --ui-colors-orange-700: #ab6512;
+    --ui-colors-orange-800: #854e0e;
+    --ui-colors-orange-900: #653c0b;
+    --ui-colors-primary-50: #e8f2ff;
+    --ui-colors-primary-100: #b6d6ff;
+    --ui-colors-primary-200: #93c2ff;
+    --ui-colors-primary-300: #62a7ff;
+    --ui-colors-primary-400: #4495ff;
+    --ui-colors-primary-500: #157bff;
+    --ui-colors-primary-600: #1370e8;
+    --ui-colors-primary-700: #0f57b5;
+    --ui-colors-primary-800: #0c448c;
+    --ui-colors-primary-900: #09346b;
+    --ui-colors-success-50: #e9f9ef;
+    --ui-colors-success-100: #baedcd;
+    --ui-colors-success-200: #99e4b5;
+    --ui-colors-success-300: #6bd893;
+    --ui-colors-success-400: #4ed17e;
+    --ui-colors-success-500: #22c55e;
+    --ui-colors-success-600: #1fb356;
+    --ui-colors-success-700: #188c43;
+    --ui-colors-success-800: #136c34;
+    --ui-colors-success-900: #0e5327;
+    --ui-colors-violet-50: #f2ebfe;
+    --ui-colors-violet-100: #d8c0fb;
+    --ui-colors-violet-200: #c5a1f9;
+    --ui-colors-violet-300: #ab76f6;
+    --ui-colors-violet-400: #9a5cf4;
+    --ui-colors-violet-500: #8133f1;
+    --ui-colors-violet-600: #752edb;
+    --ui-colors-violet-700: #5c24ab;
+    --ui-colors-violet-800: #471c85;
+    --ui-colors-violet-900: #361565;
+    --ui-colors-warning-50: #fdf7e6;
+    --ui-colors-warning-100: #f8e7b2;
+    --ui-colors-warning-200: #f5dc8d;
+    --ui-colors-warning-300: #f1cc5a;
+    --ui-colors-warning-400: #eec239;
+    --ui-colors-warning-500: #eab308;
+    --ui-colors-warning-600: #d5a307;
+    --ui-colors-warning-700: #a67f06;
+    --ui-colors-warning-800: #816204;
+    --ui-colors-warning-900: #624b03;
+
+    /*
+        TEXT
+     */
+    --ui-base-size: 16px;
+    --ui-display-1-regular: 4rem;
+    --ui-display-1-medium: 4rem;
+    --ui-display-1-semi-bold: 4rem;
+    --ui-display-1-bold: 4rem;
+    --ui-display-2-regular: 3.5rem;
+    --ui-display-2-medium: 3.5rem;
+    --ui-display-2-semi-bold: 3.5rem;
+    --ui-display-2-bold: 3.5rem;
+    --ui-display-3-regular: 3rem;
+    --ui-display-3-medium: 3rem;
+    --ui-display-3-semi-bold: 3rem;
+    --ui-display-3-bold: 3rem;
+    --ui-heading-1-regular: 2.75rem;
+    --ui-heading-1-medium: 2.75rem;
+    --ui-heading-1-semi-bold: 2.75rem;
+    --ui-heading-1-bold: 2.75rem;
+    --ui-heading-2-regular: 2.5rem;
+    --ui-heading-2-medium: 2.5rem;
+    --ui-heading-2-semi-bold: 2.5rem;
+    --ui-heading-2-bold: 2.5rem;
+    --ui-heading-3-regular: 2.25rem;
+    --ui-heading-3-medium: 2.25rem;
+    --ui-heading-3-semi-bold: 2.25rem;
+    --ui-heading-3-bold: 2.25rem;
+    --ui-heading-4-regular: 2rem;
+    --ui-heading-4-medium: 2rem;
+    --ui-heading-4-semi-bold: 2rem;
+    --ui-heading-4-bold: 2rem;
+    --ui-heading-5-regular: 1.75rem;
+    --ui-heading-5-medium: 1.75rem;
+    --ui-heading-5-semi-bold: 1.75rem;
+    --ui-heading-5-bold: 1.75rem;
+    --ui-heading-6-regular: 1.5rem;
+    --ui-heading-6-medium: 1.5rem;
+    --ui-heading-6-semi-bold: 1.5rem;
+    --ui-heading-6-bold: 1.5rem;
+    --ui-heading-7-regular: 1.25rem;
+    --ui-heading-7-medium: 1.25rem;
+    --ui-heading-7-semi-bold: 1.25rem;
+    --ui-heading-7-bold: 1.25rem;
+    --ui-text-l-regular: 1.12rem;
+    --ui-text-l-medium: 1.12rem;
+    --ui-text-l-semi-bold: 1.12rem;
+    --ui-text-l-bold: 1.12rem;
+    --ui-text-m-regular: 1rem;
+    --ui-text-m-medium: 1rem;
+    --ui-text-m-semi-bold: 1rem;
+    --ui-text-m-bold: 1rem;
+    --ui-text-s-regular: 0.88rem;
+    --ui-text-s-medium: 0.88rem;
+    --ui-text-s-semi-bold: 0.88rem;
+    --ui-text-s-bold: 0.88rem;
+    --ui-text-xs-regular: 0.75rem;
+    --ui-text-xs-medium: 0.75rem;
+    --ui-text-xs-semi-bold: 0.75rem;
+    --ui-text-xs-bold: 0.75rem;
+
+    /**
+        OTHER
+     */
+    --ui-unit: 4px;
+    --ui-transition-duration: 0.25s;
+    --ui-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --ui-transition: var(--ui-transition-duration) var(--ui-transition-timing-function);
+}

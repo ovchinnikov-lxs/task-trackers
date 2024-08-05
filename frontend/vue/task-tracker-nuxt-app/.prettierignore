@@ -1,0 +1,9 @@
+# Ignore artifacts:
+build
+coverage
+.gitlab-ci.yml
+**/analytics.ts
+**/.locales/*.*
+**/*.{yaml,yml}
+pnpm-lock.yaml
+*.svg

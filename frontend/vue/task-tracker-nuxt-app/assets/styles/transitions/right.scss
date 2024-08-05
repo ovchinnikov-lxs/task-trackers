@@ -1,0 +1,16 @@
+.right-enter-from {
+    opacity: 0;
+    transform: translate3d(calc(var(--ui-unit) * -1), 0, 0);
+}
+
+.right-leave-active {
+    opacity: 0;
+    transform: translate3d(var(--ui-unit), 0, 0);
+}
+
+.right-enter-active,
+.right-leave-active {
+    transition:
+        opacity var(--ui-transition-duration) var(--ui-transition-timing-function) ease,
+        transform var(--ui-transition-duration) var(--ui-transition-timing-function);
+}
