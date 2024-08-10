@@ -10,9 +10,6 @@ export interface ITasksItem {
     role: TTasksRole;
     assign: string[];
     deadline: string | Date;
-    doing?: string | Date;
-    review?: string | Date;
-    done?: string | Date;
     columnId: string;
     order: number;
 }

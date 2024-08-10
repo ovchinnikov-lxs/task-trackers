@@ -60,10 +60,6 @@ function useTasksList() {
 }
 
 useTasksList();
-
-/*
-    TODO: Добавить: время на карточку
- */
 </script>
 
 <style module lang="scss">

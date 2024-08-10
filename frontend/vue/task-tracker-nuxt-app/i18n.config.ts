@@ -24,6 +24,11 @@ export default defineI18nConfig(() => ({
                 assign: {
                     title: 'Assign',
                 },
+                date: {
+                    title: {
+                        deadline: 'Deadline',
+                    },
+                },
             },
             pages: {
                 tasks: {

@@ -32,6 +32,11 @@
 
             <div :class="$style.footer">
                 <TasksItemAssign :assign="assign" />
+
+                <TasksItemDate
+                    :deadline="deadline"
+                    :class="$style.date"
+                />
             </div>
         </div>
     </div>
@@ -96,5 +101,9 @@ defineProps<ITasksItem>();
     justify-content: space-between;
     padding: 18px 16px 24px;
     border-top: 2px solid var(--ui-colors-gray-50);
+}
+
+.date {
+    margin-left: auto;
 }
 </style>
