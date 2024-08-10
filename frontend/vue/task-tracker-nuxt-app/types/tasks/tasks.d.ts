@@ -1,5 +1,6 @@
 export type TTasksStatus = 'low' | 'medium' | 'high';
 export type TTasksRole = 'dev' | 'ux' | 'all';
+
 export interface ITasksItem {
     id: string;
     title: string;
@@ -8,13 +9,17 @@ export interface ITasksItem {
     status: TTasksStatus;
     role: TTasksRole;
     assign: string[];
-    deadline: Date;
-    doing?: Date;
-    review?: Date;
-    done?: Date;
+    deadline: string | Date;
+    doing?: string | Date;
+    review?: string | Date;
+    done?: string | Date;
+    columnId: string;
+    order: number;
 }
 
-export interface IBoardColumn {
-    title: 'todo' | 'doing' | 'review' | 'done';
+export interface ITasksColumn {
+    id: string;
+    title: string;
+    order: number;
     tasks: ITasksItem[];
 }

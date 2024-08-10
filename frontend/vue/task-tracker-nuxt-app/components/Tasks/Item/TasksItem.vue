@@ -1,5 +1,8 @@
 <template>
-    <div class="TasksItem">
+    <div
+        :data-task-id="id"
+        class="TasksItem"
+    >
         <div :class="$style.wrapper">
             <div :class="$style.main">
                 <div :class="$style.info">

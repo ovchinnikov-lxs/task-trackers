@@ -33,13 +33,8 @@ export default defineI18nConfig(() => ({
                         calendar: 'Calendar',
                     },
                     board: {
-                        column: {
-                            title: {
-                                todo: 'To do',
-                                doing: 'Doing',
-                                review: 'Review',
-                                done: 'Done',
-                            },
+                        error: {
+                            title: 'Something went wrong',
                         },
                     },
                 },

@@ -1,9 +1,18 @@
 <template>
     <div class="TasksBoardColumnHeader">
         <div :class="$style.wrapper">
-            <h5 :class="$style.title">{{ $t(`pages.tasks.board.column.title.${title}`) }}</h5>
+            <h5 :class="$style.title">{{ title }}</h5>
 
-            <div :class="$style.count">{{ count }}</div>
+            <div :class="$style.count">
+                <Transition
+                    name="bottom"
+                    mode="out-in"
+                >
+                    <div :key="count">
+                        {{ count }}
+                    </div>
+                </Transition>
+            </div>
         </div>
     </div>
 </template>
