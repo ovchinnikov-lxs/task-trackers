@@ -27,17 +27,16 @@ import { moveArrayElement, useSortable } from '@vueuse/integrations/useSortable'
 
 import type { ITasksColumn } from '~/types/tasks/tasks';
 
-const props = defineProps<ITasksColumn>();
+defineProps<ITasksColumn>();
 const tasksModel = defineModel<ITasksColumn['tasks']>('tasks', { required: true });
 const listRef = ref<HTMLElement | null>(null);
 const tasksList = inject(tasksListKey);
 
 function onUpdateList() {
     nextTick(() => {
-        tasksModel.value = tasksModel.value.map((item, order) => ({
-            ...item,
-            order,
-        }));
+        for (let i = 0; i < tasksModel.value.length; i++) {
+            tasksModel.value[i].order = i;
+        }
     });
 }
 
@@ -55,10 +54,7 @@ useSortable(listRef, tasksModel, {
             return;
         }
 
-        tasksModel.value.push({
-            ...addedTask,
-            columnId: props.id,
-        });
+        tasksModel.value.splice(evt.newIndex, 0, addedTask);
 
         onUpdateList();
     },
