@@ -20,6 +20,12 @@
 
 <style module lang="scss">
 @mixin animated-gradient($primary-color, $secondary-color) {
+    background: linear-gradient(135deg, $primary-color 47%, $secondary-color 50%, $primary-color 53%);
+    background-size: 400% 400%;
+    transition: all var(--ui-transition);
+    transform: translate3d(0, 0, 0);
+    animation: gradient 3s ease infinite;
+
     @keyframes gradient {
         0% {
             background-position: 100% 50%;
@@ -33,20 +39,14 @@
             background-position: 100% 50%;
         }
     }
-
-    background: linear-gradient(135deg, $primary-color 47%, $secondary-color 50%, $primary-color 53%);
-    background-size: 400% 400%;
-    transition: all var(--ui-transition);
-    transform: translate3d(0, 0, 0);
-    animation: gradient 3s ease infinite;
 }
 
 @mixin card {
-    @include animated-gradient(var(--ui-colors-base-white), var(--ui-colors-base-neutral));
-
     width: 100%;
     border: 2px solid var(--ui-colors-gray-50);
     border-radius: 6px;
+
+    @include animated-gradient(var(--ui-colors-base-white), var(--ui-colors-base-neutral));
 }
 
 .wrapper {
