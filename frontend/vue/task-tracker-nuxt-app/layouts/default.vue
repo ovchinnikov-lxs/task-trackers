@@ -14,6 +14,24 @@
     </main>
 </template>
 
+<script setup lang="ts">
+const columnStore = useColumnsStore();
+
+const { status } = await useLazyAsyncData(async () => {
+    return await columnStore.fetchColumns();
+});
+
+watch(
+    status,
+    (loadingStatus) => {
+        columnStore.loadingStatus = loadingStatus;
+    },
+    {
+        immediate: true,
+    },
+);
+</script>
+
 <style lang="scss" module>
 .wrapper {
     --sidebar-width: 320px;

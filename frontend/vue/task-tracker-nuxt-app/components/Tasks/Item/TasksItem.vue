@@ -9,6 +9,14 @@
                     <TasksItemStatus :status="status" />
 
                     <TasksItemRole :role="role" />
+
+                    <BaseButton
+                        size="small"
+                        :class="$style.button"
+                        @click="onEdit"
+                    >
+                        {{ $t('tasks.edit.label') }}
+                    </BaseButton>
                 </div>
 
                 <h6 :class="$style.title">{{ title }}</h6>
@@ -45,7 +53,13 @@
 <script setup lang="ts">
 import type { ITasksItem } from '~/types/tasks/tasks';
 
-defineProps<ITasksItem>();
+const props = defineProps<ITasksItem>();
+
+function onEdit() {
+    const tasksStore = useTasksStore();
+
+    tasksStore.setEditedTask(props);
+}
 </script>
 
 <style lang="scss" module>
@@ -68,6 +82,11 @@ defineProps<ITasksItem>();
     display: flex;
     column-gap: 12px;
     align-items: center;
+}
+
+.button {
+    margin-bottom: auto;
+    margin-left: auto;
 }
 
 .title {

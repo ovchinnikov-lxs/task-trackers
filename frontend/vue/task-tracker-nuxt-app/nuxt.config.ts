@@ -3,8 +3,6 @@ export default defineNuxtConfig({
     compatibilityDate: '2024-04-03',
     devtools: { enabled: true },
 
-    ssr: false,
-
     css: [
         '~/assets/styles/_bundle.scss',
     ],
@@ -18,7 +16,43 @@ export default defineNuxtConfig({
     },
 
     modules: [
-        '@nuxtjs/i18n',
+        [
+            '@pinia/nuxt',
+            {
+                autoImports: [
+                    'defineStore',
+                    'acceptHMRUpdate',
+                    'storeToRefs',
+                    'mapState',
+                    'mapActions',
+                    'mapGetters',
+                    'mapStores',
+                    'mapWritableState',
+                ],
+            },
+        ],
+        [
+            '@nuxtjs/i18n',
+            {
+                locales: [
+                    {
+                        code: 'en',
+                        iso: 'en-US',
+                    },
+                    {
+                        code: 'ru',
+                        iso: 'ru-RU',
+                    },
+                ],
+                defaultLocale: 'en',
+                strategy: 'prefix_except_default',
+                detectBrowserLanguage: {
+                    useCookie: true,
+                    cookieKey: 'i18n_redirected',
+                    redirectOn: 'root', // recommended
+                },
+            },
+        ],
         [
             '@vite-pwa/nuxt',
             {
@@ -73,23 +107,18 @@ export default defineNuxtConfig({
         ],
     ],
 
-    i18n: {
-        locales: [
-            {
-                code: 'en',
-                iso: 'en-US',
-            },
-            {
-                code: 'ru',
-                iso: 'ru-RU',
-            },
-        ],
-        defaultLocale: 'en',
-        strategy: 'prefix_except_default',
-        detectBrowserLanguage: {
-            useCookie: true,
-            cookieKey: 'i18n_redirected',
-            redirectOn: 'root', // recommended
+    routeRules: {
+        '/api/**': {
+            proxy: { to: `${process.env?.NUXT_PUBLIC_API_BASE}/api/**` },
+        },
+
+        '/**': {
+            static: true,
+        },
+
+        '/tasks/**': {
+            static: false,
+            ssr: false,
         },
     },
 

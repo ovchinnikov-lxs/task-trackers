@@ -26,11 +26,18 @@ const columnsModel = defineModel<ITasksColumn[]>('columns', { required: true });
     column-gap: 24px;
     width: 100%;
     height: 100%;
-    padding: 0 32px;
 }
 
 .column {
     flex-shrink: 0;
     width: 356px;
+
+    &:first-child {
+        padding-left: 32px;
+    }
+
+    &:last-child {
+        padding-right: 32px;
+    }
 }
 </style>

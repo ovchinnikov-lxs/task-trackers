@@ -20,7 +20,12 @@ export class ColumnsController {
     @ApiResponse({ status: 200, type: ColumnModel, isArray: true })
     @Get()
     getAll() {
-        return this.columnsService.findAll();
+        // TODO: REMOVE TIMEOUT
+        return new Promise((res) =>
+            setTimeout(() => {
+                res(this.columnsService.findAll());
+            }, 2000),
+        );
     }
 
     @ApiOperation({ summary: 'Получение колонки по ID' })

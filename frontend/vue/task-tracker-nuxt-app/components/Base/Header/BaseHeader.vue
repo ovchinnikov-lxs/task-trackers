@@ -2,6 +2,8 @@
     <header class="BaseHeader">
         <div :class="$style.wrapper">
             <h2 :class="$style.title">{{ $t('header.title') }}</h2>
+
+            <BaseLang :class="$style.lang" />
         </div>
     </header>
 </template>
@@ -21,5 +23,9 @@
     font-size: var(--ui-heading-5-medium);
     font-weight: normal;
     color: var(--ui-colors-gray-900);
+}
+
+.lang {
+    margin-left: auto;
 }
 </style>

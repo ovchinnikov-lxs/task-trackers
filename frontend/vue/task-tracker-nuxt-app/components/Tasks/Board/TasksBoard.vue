@@ -6,19 +6,18 @@
                 mode="out-in"
             >
                 <LazyTasksBoardLoading
-                    v-if="status === 'pending'"
+                    v-if="loadingStatus === 'pending'"
                     :class="$style.loading"
                 />
 
                 <LazyTasksBoardError
-                    v-else-if="status === 'error'"
+                    v-else-if="loadingStatus === 'error'"
                     :class="$style.error"
                 />
 
                 <LazyTasksBoardColumnList
-                    v-else-if="status === 'success' && data?.columns.length"
-                    v-model:columns="data.columns"
-                    :class="$style.list"
+                    v-else-if="loadingStatus === 'success' && columnsList"
+                    v-model:columns="columnsList"
                 />
             </Transition>
         </div>
@@ -26,29 +25,19 @@
 </template>
 
 <script setup lang="ts">
-import type { ITasksColumn, ITasksItem } from '~/types/tasks/tasks';
-
-const { status, data } = await useLazyAsyncData(async () => {
-    try {
-        const columns = await $fetch<ITasksColumn[]>('/api/columns');
-
-        return {
-            columns,
-        };
-    } catch (e) {
-        console.error('TASK_BOARD:ASYNC_DATA:', e);
-        return {
-            columns: [],
-        };
-    }
-});
+import type { ITasksItem } from '~/types/tasks/tasks';
 
 function useTasksList() {
     const tasksList = ref<ITasksItem[]>([]);
-    provide(tasksListKey, tasksList);
+    provide(tasksListKey, tasksList); // TODO: Убрать провайд
+
+    const columnStore = useColumnsStore();
+
+    const loadingStatus = computed(() => columnStore.loadingStatus);
+    const columnsList = computed(() => columnStore.columns);
 
     watch(
-        () => data.value?.columns,
+        () => columnStore.columns,
         (val) => {
             tasksList.value = val?.map((item) => item.tasks)?.flat() || [];
         },
@@ -57,9 +46,14 @@ function useTasksList() {
             deep: true,
         },
     );
+
+    return {
+        loadingStatus,
+        columnsList,
+    };
 }
 
-useTasksList();
+const { loadingStatus, columnsList } = useTasksList();
 </script>
 
 <style module lang="scss">

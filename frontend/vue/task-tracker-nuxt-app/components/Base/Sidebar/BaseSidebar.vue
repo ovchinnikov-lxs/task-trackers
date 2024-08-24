@@ -2,6 +2,8 @@
     <aside class="BaseSidebar">
         <div :class="$style.wrapper">
             <h1 :class="$style.title">{{ $t('sidebar.title') }}</h1>
+
+            <BaseSidebarForm />
         </div>
     </aside>
 </template>
@@ -10,6 +12,7 @@
 .wrapper {
     display: flex;
     flex-direction: column;
+    row-gap: 48px;
     width: 100%;
     height: 100%;
     padding: 32px;
